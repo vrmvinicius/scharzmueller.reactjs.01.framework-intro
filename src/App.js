@@ -3,7 +3,6 @@ import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
 import Account from './components/Account';
 import Blog from './components/Blog';
-import Info from './components/Info';
 import User from './components/User';
 
 class App extends Component {
@@ -11,9 +10,15 @@ class App extends Component {
       return (
          <Router>
             <div>
+               <div>
+                  <Link to="/">Home</Link> |
+                  <Link to="/account">Account</Link> |
+                  <Link to="/blog">Blog</Link>
+               </div>
+               <hr />
                <Route exact path="/" component={User} />
                <Route path="/blog" component={Blog} />
-               <Route path="/account" component={Account} />               
+               <Route path="/account" component={Account} />
             </div>
          </Router>
       );
